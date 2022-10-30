@@ -3,20 +3,20 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
             <li class="nav-item active"><a href=""><i class="la la-mouse-pointer"></i><span
-                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{__('admin/sidebar.Home Page')}} </span></a>
+                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{__('admin/sidebar.home page')}} </span></a>
             </li>
 
-            <li class="nav-item  open ">
+            <li class="nav-item">
                 <a href=""><i class="la la-home"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.Languages')}} </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.languages')}} </span>
                     <span
                         class="badge badge badge-info badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.Display all')}} </a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.display all')}} </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/sidebar.Add new language')}} </a>
+                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/sidebar.add new language')}} </a>
                     </li>
                 </ul>
             </li>
@@ -29,7 +29,7 @@
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.Display all')}}</a>
+                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.display all')}}</a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
                             قسم جديد </a>
@@ -44,7 +44,7 @@
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.Display all')}}</a>
+                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.display all')}}</a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
                             قسم فرعي جديد </a>
@@ -53,15 +53,15 @@
             </li>
 
             <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.Stores')}}  </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.stores')}}  </span>
                     <span
                         class="badge badge badge-success badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.Display all')}}</a>
+                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.display all')}}</a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/sidebar.Add new store')}}</a>
+                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/sidebar.add new store')}}</a>
                     </li>
                 </ul>
             </li>
@@ -74,7 +74,7 @@
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.Display all')}}</a>
+                                          data-i18n="nav.dash.ecommerce">{{__('admin/sidebar.display all')}}</a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
                             طالب </a>
@@ -98,17 +98,17 @@
 
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
-                                                                                    data-i18n="nav.templates.main">{{__('admin/sidebar.Settings')}}</span></a>
+                                                                                    data-i18n="nav.templates.main">{{__('admin/sidebar.settings')}}</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.Shipping methods')}}</a>
+                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.shipping methods')}}</a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href=""
-                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.Free shipping')}}</a>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods','free')}}"
+                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.free shipping')}}</a>
                             </li>
-                            <li><a class="menu-item" href=""
-                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.Inner shipping')}}</a>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods','inner')}}"
+                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.inner shipping')}}</a>
                             </li>
-                            <li><a class="menu-item" href="">{{__('admin/sidebar.Outer shipping')}}</a>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods','outer')}}">{{__('admin/sidebar.outer shipping')}}</a>
                             </li>
 
 
