@@ -9,6 +9,17 @@ return [
   'status'=>'الحاله',
   'not exist'=>'غير موجود',
   'required'=>'مطلوب',
+  'edit profile'=>'تعديل الصفحة الشخصية',
+  'email'=>'البريد الإلكتروني',
+  'password'=>'كلمة المرور',
+  'confirm password'=>'تأكيد كلمة المرور',
   'updated successfully'=>'تم التحديث بنجاح',
   'there is something error,please try again later'=>'هناك خطأ ما يرجي المحاوله فيما بعد',
+  'email field is required'=>'يجب إدخال البريد الإلكتروني',
+  'email is not valid'=>'صيغه البريد الالكتروني غير صحيحه',
+  'email is already taken'=>'البريد الالكتروني مستخدم بالفعل',
+  'password field is required'=>'يجب إدخال كلمه المرور',
+  'password must be more than 6 letters'=>'يجب إدخال كلمه المرور مكونه من 6 أحرف او أكثر',
+  'password does not match'=>'كلمة المرور غير متطابقه',
+
 ];

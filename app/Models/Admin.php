@@ -12,3 +12,4 @@ class Admin extends Authenticatable
     protected $guarded = [];
     public $timestamps = true;
 }
+
