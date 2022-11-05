@@ -7,7 +7,7 @@
                         class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i
                             class="ft-menu font-large-1"></i></a></li>
                 <li class="nav-item">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="">
                         <img class="brand-logo" alt="modern admin logo"
                              src="{{asset('assets/admin/images/logo/logo.png')}}">
                         <h3 class="brand-text">Modern Admin</h3>
@@ -27,24 +27,45 @@
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
                                 class="ficon ft-maximize"></i></a></li>
                 </ul>
-                <ul class="nav navbar-nav float-right">
+                <div class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                 <span class="mr-1">{{__('admin/header.Hello')}}
-{{--                  <span--}}
-{{--                      class="user-name text-bold-700">{{Auth::user()->name}}</span>--}}
+                  <span
+                      class="user-name text-bold-700">{{Auth::user()->name}}</span>
                     <span
                       class="user-name text-bold-700"></span>
                 </span>
-                            <span class="avatar avatar-online">
-                  <img style="height: 35px;" src="" alt="avatar"><i></i></span>
+{{--                            <span class="avatar avatar-online">--}}
+{{--                  <img style="height: 35px;" src="" alt="avatar"><i></i></span>--}}
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('edit.admin.profile')}}"><i
                                     class="ft-user"></i>{{__('admin/header.Edit profile')}}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href=""><i class="ft-power"></i>{{__('admin/header.logout')}}</a>
+                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i>{{__('admin/header.logout')}}</a>
                         </div>
                     </li>
+
+
+
+                    <li class="dropdown dropdown-user nav-item">
+                        <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                            <span class="mr-1 flag-icon flag-icon-{{app()->getLocale() == 'ar' ?'eg':'gb'}}"></span>{{app()->getLocale()}}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                    <a  class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                        <span class="flag-icon flag-icon-{{$localeCode == 'ar' ?'eg':'gb'}}"></span> {{ $properties['native'] }}
+                                    </a>
+                            @endforeach
+                        </div>
+{{--                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i--}}
+{{--                                    class="ft-user"></i>{{__('admin/header.Edit profile')}}</a>--}}
+{{--                            <div class="dropdown-divider"></div>--}}
+{{--                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i>{{__('admin/header.logout')}}</a>--}}
+{{--                        </div>--}}
+                    </li>
+
 
                     <li class="dropdown dropdown-notification nav-item">
                         <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>

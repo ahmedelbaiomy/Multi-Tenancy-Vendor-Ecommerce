@@ -9,7 +9,16 @@ return [
   'status'=>'status',
   'not exist'=>'not exist',
   'required'=>'required',
+    'edit profile'=>'Edit Profile',
+    'email'=>'Email',
+    'password'=>'Password',
+    'confirm password'=>'Confirm Password',
     'updated successfully'=>'Updated Successfully',
     'there is something error,please try again later'=>'there is something error,please try again later',
-
+    'email field is required'=>'email field is required',
+    'email is not valid'=>'email is not valid',
+    'email is already taken'=>'email is already taken',
+    'password field is required'=>'password field is required',
+    'password must be more than 6 letters'=>'password must be more than 6 letters',
+    'password does not match'=>'Password does not match',
 ];
