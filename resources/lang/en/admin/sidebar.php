@@ -11,4 +11,8 @@ return [
     'home page' => 'Home Page',
     'add new language' => 'Add new language',
     'add new store' => 'Add new store',
+    'Main Categories'=>'Main Categories',
+    'Add New Category'=>'Add New Category',
+    'Sub Categories'=>'Sub Categories',
+
 ];

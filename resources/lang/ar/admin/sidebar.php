@@ -12,4 +12,8 @@ return [
     'home page' => 'الصفحة الرئيسية',
     'add new language' => 'إضافة لغه جديدة',
     'add new store' => 'إضافة متجر جديد',
+    'Main Categories'=>'الأقسام الرئيسية',
+    'Add New Category'=>'إضافه قسم جديد',
+    'Sub Categories'=>'الأقسام الفرعية',
+
 ];

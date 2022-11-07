@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\LoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\SettingsController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\CategoryController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -38,6 +39,18 @@ Route::group(
             Route::get('edit-profile', [ProfileController::class, 'editProfile'])->name('edit.admin.profile');
             Route::put('update-profile', [ProfileController::class, 'updateProfile'])->name('update.admin.profile');
         });
+
+        ##################################### categories #########################################
+        Route::group(['prefix' => 'categories'], function () {
+
+            Route::get('/',[CategoryController::class,'index'])->name('admin.categories');
+            Route::get('create',[CategoryController::class,'create'])->name('admin.categories.create');
+            Route::post('store',[CategoryController::class,'store'])->name('admin.categories.store');
+            Route::get('edit/{id}',[CategoryController::class,'edit'])->name('admin.categories.edit');
+            Route::post('update/{id}',[CategoryController::class,'update'])->name('admin.categories.update');
+            Route::get('destroy/{id}',[CategoryController::class,'destroy'])->name('admin.categories.destroy');
+        });
+        ##################################### end categories #####################################
 
     });
 
