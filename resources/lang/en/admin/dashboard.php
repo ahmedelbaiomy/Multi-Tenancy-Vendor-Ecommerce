@@ -47,6 +47,11 @@ return [
     'Edit brand'=>'Edit brand',
     'Add new brand'=>'Add new brand',
     'brand name'=>'Brand Name',
-
+    'tags'=>'tags',
+    'add new tag' => 'Add new tag',
+    'tag name' => 'Tag',
+    'tag link' => 'Slug/Link',
+    'tag information'=>'Tag Information',
+    'Edit tag'=>'Edit Tag',
 
 ];
