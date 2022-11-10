@@ -42,6 +42,11 @@ return [
     'created successfully'=>'تم الإنشاء بنجاح',
     'Sub Categories'=>'الأقسام الفرعية',
     'choose'=>'اختر',
+    'brands'=>'الماركات',
+    'brand information'=>'بيانات الماركه',
+    'Edit brand'=>'تعديل الماركه',
+    'Add new brand'=>'إضافه ماركه جديده',
+    'brand name'=>'اسم الماركه',
 
 
 ];

@@ -14,5 +14,6 @@ return [
     'Main Categories'=>'Main Categories',
     'Add New Category'=>'Add New Category',
     'Sub Categories'=>'Sub Categories',
-
+    'brands'=>'Brands',
+    'add new brand' => 'add new brand',
 ];

@@ -42,6 +42,11 @@ return [
     'created successfully'=>'Created Successfully',
     'Sub Categories'=>'Sub Categories',
     'choose'=>'Choose',
+    'brands'=>'Brands',
+    'brand information'=>'Brand Information',
+    'Edit brand'=>'Edit brand',
+    'Add new brand'=>'Add new brand',
+    'brand name'=>'Brand Name',
 
 
 ];
