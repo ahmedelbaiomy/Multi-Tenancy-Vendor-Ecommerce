@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\SettingsController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\BrandController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -51,6 +52,18 @@ Route::group(
             Route::get('destroy/{id}',[CategoryController::class,'destroy'])->name('admin.categories.destroy');
         });
         ##################################### end categories #####################################
+
+        ##################################### brands #########################################
+        Route::group(['prefix' => 'brands'], function () {
+
+            Route::get('/',[BrandController::class,'index'])->name('admin.brands');
+            Route::get('create',[BrandController::class,'create'])->name('admin.brands.create');
+            Route::post('store',[BrandController::class,'store'])->name('admin.brands.store');
+            Route::get('edit/{id}',[BrandController::class,'edit'])->name('admin.brands.edit');
+            Route::post('update/{id}',[BrandController::class,'update'])->name('admin.brands.update');
+            Route::get('destroy/{id}',[BrandController::class,'destroy'])->name('admin.brands.destroy');
+        });
+        ##################################### end brands #####################################
 
     });
 

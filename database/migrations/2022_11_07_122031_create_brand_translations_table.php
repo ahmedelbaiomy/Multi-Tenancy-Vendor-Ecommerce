@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('brand_translations', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('brand_id')->unsigned();
+            $table->string('locale');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->unique(['brand_id','locale']);
+
+            $table->foreign('brand_id')->references('id')->on('brands')->cascadeOnDelete();
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('brand_translations');
     }
 };
