@@ -47,6 +47,11 @@ return [
     'Edit brand'=>'تعديل الماركه',
     'Add new brand'=>'إضافه ماركه جديده',
     'brand name'=>'اسم الماركه',
-
+    'tags'=>'العلامات',
+    'add new tag' => 'إضافة علامه جديده',
+    'tag name' => 'العلامه',
+    'tag link' => 'رابط العلامه',
+    'tag information'=>'بيانات العلامه',
+    'Edit tag'=>'تعديل العلامه',
 
 ];

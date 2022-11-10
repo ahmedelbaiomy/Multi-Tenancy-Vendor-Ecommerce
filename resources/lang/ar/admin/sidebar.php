@@ -17,5 +17,7 @@ return [
     'Sub Categories'=>'الأقسام الفرعية',
     'brands'=>'الماركات',
     'add new brand' => 'إضافة ماركه جديد',
+    'tags'=>'العلامات',
+    'add new tag' => 'إضافة علامه جديده',
 
 ];

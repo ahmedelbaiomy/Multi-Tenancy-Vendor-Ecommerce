@@ -16,4 +16,6 @@ return [
     'Sub Categories'=>'Sub Categories',
     'brands'=>'Brands',
     'add new brand' => 'add new brand',
+    'tags'=>'tags',
+    'add new tag' => 'Add new tag',
 ];
