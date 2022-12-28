@@ -14,3 +14,4 @@ function uploadImage($folder, $image)
     return $imageName;
 
 }
+

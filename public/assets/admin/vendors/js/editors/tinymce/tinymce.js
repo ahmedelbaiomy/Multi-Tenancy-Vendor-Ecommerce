@@ -82,7 +82,7 @@
 
 			target[fragments[fragments.length - 1]] = modules[id];
 		}
-		
+
 		// Expose private modules for unit tests
 		if (exports.AMDLC_TESTS) {
 			privateModules = exports.privateModules || {};
@@ -9861,7 +9861,7 @@ define("tinymce/AddOnManager", [
  *         onclick: function() {
  *             // Open window with a specific url
  *             editor.windowManager.open({
- *                 title: 'TinyMCE site',
+ *                 title: 'TinyMCE front',
  *                 url: 'http://www.tinymce.com',
  *                 width: 800,
  *                 height: 600,
@@ -37233,7 +37233,7 @@ define("tinymce/Editor", [
 			self.iframeHTML = settings.doctype + '<html><head>';
 
 			// We only need to override paths if we have to
-			// IE has a bug where it remove site absolute urls to relative ones if this is specified
+			// IE has a bug where it remove front absolute urls to relative ones if this is specified
 			if (settings.document_base_url != self.documentBaseUrl) {
 				self.iframeHTML += '<base href="' + self.documentBaseURI.getURI() + '" />';
 			}

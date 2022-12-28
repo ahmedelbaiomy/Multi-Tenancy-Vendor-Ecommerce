@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MainCategoryRequest;
+use App\Http\Enumerations\CategoryType;
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,17 +16,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
-        if($request->query('type') == 'main'){
-            $categories = Category::parent()->orderBy('id','DESC')->get();
-            return view('dashboard.categories.index', compact('categories'));
-        }elseif ($request->query('type') == 'sub'){
-            $categories = Category::child()->orderBy('id','DESC')->get();
-            return view('dashboard.subCategories.index', compact('categories'));
-        }
-
+        $categories = Category::with('_parent')->orderBy('id','DESC')->get();
+        return view('dashboard.categories.index', compact('categories'));
     }
 
     /**
@@ -33,14 +28,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        if($request->query('type') == 'sub'){
-            $categories = Category::parent()->orderBy('id','DESC')->get();
-            return view('dashboard.subCategories.create', compact('categories'));
-        }
-        return view('dashboard.categories.create');
-
+            $categories = Category::select('id','parent_id')->orderBy('id','DESC')->get();
+            return view('dashboard.categories.create', compact('categories'));
     }
 
     /**
@@ -49,7 +40,7 @@ class CategoryController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MainCategoryRequest $request)
+    public function store(CategoryRequest $request)
     {
         if (!$request->has('is_active')) {
             $request->request->add(['is_active' => 0]);
@@ -57,15 +48,18 @@ class CategoryController extends Controller
             $request->request->add(['is_active' => 1]);
         }
 
+        if($request -> type == 1) //main category
+        {
+            $request->request->add(['parent_id' => null]);
+        }
+
             DB::beginTransaction();
             $category = Category::create($request->all());
             $category->name = $request->name;
             $category->save();
             DB::commit();
-        if($request->filled('parent_id')) {
-            return redirect()->route('admin.categories',['type'=>'sub'])->with(['success' => __('created successfully')]);
-        }
-        return redirect()->route('admin.categories',['type'=>'main'])->with(['success' => __('created successfully')]);
+
+        return redirect()->route('admin.categories')->with(['success' => __('created successfully')]);
 
     }
 
@@ -89,17 +83,11 @@ class CategoryController extends Controller
     public function edit($id,Request $request)
     {
         $category = Category::find($id);
+        $categories = Category::select('id','parent_id')->orderBy('id','DESC')->get();
 
-        if($request->query('type') == 'sub'){
-            $categories = Category::parent()->orderBy('id','DESC')->get();
-            if (!$category)
+        if (!$category)
                 return redirect()->route('admin.categories')->with(['error' => __('admin\dashboard.category not found')]);
-            return view('dashboard.subCategories.edit', compact(['category','categories']));
-        }elseif ($request->query('type') == 'main'){
-            if (!$category)
-                return redirect()->route('admin.categories')->with(['error' => __('admin\dashboard.category not found')]);
-            return view('dashboard.categories.edit', compact('category'));
-        }
+            return view('dashboard.categories.edit', compact(['category','categories']));
 
     }
 
@@ -110,8 +98,9 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MainCategoryRequest $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
+        $category = Category::find($id);
 
         if (!$request->has('is_active')) {
             $request->request->add(['is_active' => 0]);
@@ -119,7 +108,12 @@ class CategoryController extends Controller
             $request->request->add(['is_active' => 1]);
         }
 
-        $category = Category::find($id);
+        if($request -> type == CategoryType::mainCategory) //main category
+        {
+            $request->request->add(['parent_id' => null]);
+        }
+
+
         if (!$category) {
             return redirect()->back()->with(['error' => __('category not found')]);
         } else {
@@ -128,10 +122,8 @@ class CategoryController extends Controller
             $category->name = $request->name;
             $category->save();
             DB::commit();
-            if($request->filled('parent_id')) {
-                return redirect()->route('admin.categories',['type'=>'sub'])->with(['success' => __('updated successfully')]);
-            }
-            return redirect()->route('admin.categories',['type'=>'main'])->with(['success' => __('updated successfully')]);
+
+            return redirect()->route('admin.categories')->with(['success' => __('updated successfully')]);
 
         }
 

@@ -50,7 +50,7 @@ CodeMirror.defineMode("mirc", function() {
                             "$readn $regex $regml $regsub $regsubex $remove $remtok $replace $replacex " +
                             "$reptok $result $rgb $right $round $scid $scon $script $scriptdir $scriptline " +
                             "$sdir $send $server $serverip $sfile $sha1 $shortfn $show $signal $sin " +
-                            "$site $sline $snick $snicks $snotify $sock $sockbr $sockerr $sockname " +
+                            "$front $sline $snick $snicks $snotify $sock $sockbr $sockerr $sockname " +
                             "$sorttok $sound $sqrt $ssl $sreq $sslready $status $strip $str $stripped " +
                             "$syle $submenu $switchbar $tan $target $ticks $time $timer $timestamp " +
                             "$timestampfmt $timezone $tip $titlebar $toolbar $treebar $trust $ulevel " +

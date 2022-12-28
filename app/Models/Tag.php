@@ -11,4 +11,5 @@ class Tag extends Model
     use HasFactory ,Translatable;
     protected $fillable=['slug'];
     protected $translatedAttributes = ['name'];
+
 }

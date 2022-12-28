@@ -985,7 +985,7 @@ snippet llSetParcelMusicURL\n\
 	llSetParcelMusicURL(${1:string url});\n\
 	$0\n\
 snippet llSetPayPrice\n\
-	llSetPayPrice(${1:integer price}, [${2:integer price_button_a}, ${3:integer price_button_b}, ${4:integer price_button_c}, ${5:integer price_button_d}]);\n\
+	llSetPayPrice(${1:integer prices}, [${2:integer price_button_a}, ${3:integer price_button_b}, ${4:integer price_button_c}, ${5:integer price_button_d}]);\n\
 	$0\n\
 snippet llSetPhysicsMaterial\n\
 	llSetPhysicsMaterial(${1:integer mask}, ${2:float gravity_multiplier}, ${3:float restitution}, ${4:float friction}, ${5:float density});\n\

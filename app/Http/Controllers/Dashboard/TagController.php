@@ -3,11 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BrandRequest;
 use App\Http\Requests\MainCategoryRequest;
 use App\Http\Requests\TagRequest;
-use App\Models\Brand;
-use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -48,7 +45,6 @@ class TagController extends Controller
 
         DB::beginTransaction();
         $tag = Tag::create($request->all());
-
         $tag->name = $request->name;
         $tag->save();
         DB::commit();
@@ -78,7 +74,7 @@ class TagController extends Controller
     {
         $tag = Tag::find($id);
         if (!$tag)
-            return redirect()->route('admin.tags')->with(['error' => __('admin\dashboard.brand not found')]);
+            return redirect()->route('admin.tags')->with(['error' => __('admin\dashboard.tag not found')]);
         return view('dashboard.tags.edit', compact('tag'));
 
     }
@@ -119,7 +115,7 @@ class TagController extends Controller
     {
         $tag = Tag::find($id);
         if (!$tag) {
-            return redirect()->back()->with(['error' => __('brand not found')]);
+            return redirect()->back()->with(['error' => __('tag not found')]);
         } else {
             $tag->delete();
             return redirect()->back()->with(['success' => __('deleted successfully')]);

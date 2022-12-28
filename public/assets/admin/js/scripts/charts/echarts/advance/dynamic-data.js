@@ -52,7 +52,7 @@ $(window).on("load", function(){
 
                 // Add Legend
                 legend: {
-                    data:['Latest price', 'Pre-order queue']
+                    data:['Latest prices', 'Pre-order queue']
                 },
 
                 // Add custom colors
@@ -140,7 +140,7 @@ $(window).on("load", function(){
                         })()
                     },
                     {
-                        name:'Latest price',
+                        name:'Latest prices',
                         type:'line',
                         data:(function (){
                             var res = [];
