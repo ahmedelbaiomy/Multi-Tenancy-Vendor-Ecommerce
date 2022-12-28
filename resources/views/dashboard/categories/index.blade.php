@@ -5,13 +5,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> {{__('admin\dashboard.Main Categories')}} </h3>
+                    <h3 class="content-header-title"> {{__('admin\dashboard.Categories')}} </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin\dashboard.Home Page')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active"> {{__('admin\dashboard.Main Categories')}}
+                                <li class="breadcrumb-item active"> {{__('admin\dashboard.Categories')}}
                                 </li>
                             </ol>
                         </div>
@@ -25,7 +25,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">{{__('admin\dashboard.Main Categories')}}</h4>
+                                    <h4 class="card-title">{{__('admin\dashboard.Categories')}}</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -48,6 +48,7 @@
                                             <thead class="">
                                             <tr>
                                                 <th>{{__('admin\dashboard.name')}}</th>
+                                                <th>{{__('admin\dashboard.Main Category')}}</th>
                                                 <th>{{__('admin\dashboard.Link')}}</th>
                                                 <th>{{__('admin\dashboard.status')}}</th>
                                                 <th>{{__('admin\dashboard.image')}}</th>
@@ -59,15 +60,16 @@
                                             @isset($categories)
                                                 @foreach($categories as $category)
                                                     <tr>
-                                                        <td>{{$category -> name}}</td>
-                                                        <td>{{$category -> slug}}</td>
+                                                        <td>{{$category->name}}</td>
+                                                        <td>{{$category->_parent->name ?? '---'}}</td>
+                                                        <td>{{$category->slug}}</td>
                                                         <td><span
                                                                 class="badge badge badge-{{$category->getActive() ==  __('admin\dashboard.active')? 'success':'danger'}} badge-pill float-right mr-2">{{$category -> getActive()}}</span></td>
                                                         <td> <img style="width: 150px; height: 100px;" src=" "></td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.categories.edit',[$category -> id,'type'=>'main'])}}"
+                                                                <a href="{{route('admin.categories.edit',[$category -> id])}}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin\dashboard.Edit')}}</a>
 
 

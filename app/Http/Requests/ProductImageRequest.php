@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ProductQty;
 use Illuminate\Foundation\Http\FormRequest;
 
-class MainCategoryRequest extends FormRequest
+class ProductImageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +25,11 @@ class MainCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'slug'=>'required|unique:categories,slug,'.$this->id,
+
+            'product_id'=>'required|exists:products,id',
+            'photos'=>'required|array|min:1',
+            'photos.*'=>'required|string',
         ];
     }
-    
+
 }

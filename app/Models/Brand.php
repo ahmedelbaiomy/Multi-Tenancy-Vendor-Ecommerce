@@ -18,6 +18,9 @@ class Brand extends Model
         'is_active' => 'boolean',
     ];
 
+    public function scopeActive($query){
+        return $query->where('is_active',1);
+    }
     public function getActive()
     {
         return $this->is_active == 0 ? __('admin\dashboard.not active') : __('admin\dashboard.active');
@@ -25,5 +28,8 @@ class Brand extends Model
 
     public function getPhotoAttribute($photo){
         return ($photo !== null) ? asset('/assets/images/brands/'.$photo) : '';
+    }
+    public function products(){
+        return $this->hasMany(Product::class);
     }
 }

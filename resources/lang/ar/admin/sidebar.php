@@ -15,9 +15,15 @@ return [
     'Main Categories'=>'الأقسام الرئيسية',
     'Add New Category'=>'إضافه قسم جديد',
     'Sub Categories'=>'الأقسام الفرعية',
+    'Categories'=>'الأقسام',
     'brands'=>'الماركات',
     'add new brand' => 'إضافة ماركه جديد',
     'tags'=>'العلامات',
+    'products'=>'المنتجات',
     'add new tag' => 'إضافة علامه جديده',
-
+    'add new product' => 'إضافه منتج جديد',
+    'attributes'=>'خصائص المنتج',
+    'add new attribute'=>'إضافة خاصيه جديده',
+    'options'=>'السمات',
+    'add new option'=>'إضافه سمه جديده',
 ];

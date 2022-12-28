@@ -41,7 +41,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
 		onclick: function() {
 			// Open window with a specific url
 			editor.windowManager.open({
-				title: 'TinyMCE site',
+				title: 'TinyMCE front',
 				url: url + '/dialog.html',
 				width: 600,
 				height: 400,

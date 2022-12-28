@@ -70,7 +70,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">{{__('admin\dashboard.price')}}</label>
+                                                            <label for="projectinput1">{{__('admin\dashboard.prices')}}</label>
                                                             <input type="number"
                                                                    value="{{$shippingMethod->plain_value}}"
                                                                    id="plain_value"

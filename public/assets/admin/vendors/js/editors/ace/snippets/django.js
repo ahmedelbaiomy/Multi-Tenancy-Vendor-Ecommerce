@@ -94,7 +94,7 @@ snippet modeladmin\n\
 	class ${1:ModelName}Admin(admin.ModelAdmin):\n\
 		${2}\n\
 	\n\
-	admin.site.register($1, $1Admin)\n\
+	admin.front.register($1, $1Admin)\n\
 	\n\
 snippet tabularinline\n\
 	class ${1:ModelName}Inline(admin.TabularInline):\n\

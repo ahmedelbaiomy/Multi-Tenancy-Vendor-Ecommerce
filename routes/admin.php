@@ -8,6 +8,9 @@ use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\BrandController;
 use App\Http\Controllers\Dashboard\TagController;
+use App\Http\Controllers\Dashboard\ProductController;
+use App\Http\Controllers\Dashboard\AttributeController;
+use App\Http\Controllers\Dashboard\OptionController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -77,6 +80,47 @@ Route::group(
             Route::get('destroy/{id}',[TagController::class,'destroy'])->name('admin.tags.destroy');
         });
         ##################################### end tags #####################################
+        ##################################### products #########################################
+        Route::group(['prefix' => 'products'], function () {
+
+            Route::get('/',[ProductController::class,'index'])->name('admin.products');
+            Route::get('create',[ProductController::class,'create'])->name('admin.products.create');
+            Route::post('store',[ProductController::class,'store'])->name('admin.products.store');
+            Route::get('edit/{id}',[ProductController::class,'edit'])->name('admin.products.edit');
+            Route::post('update/{id}',[ProductController::class,'update'])->name('admin.products.update');
+            Route::get('destroy/{id}',[ProductController::class,'destroy'])->name('admin.products.destroy');
+
+            //images
+            Route::get('images/{id}',[ProductController::class,'uploadImages'])->name('admin.products.images');
+            Route::post('storeImages',[ProductController::class,'storeImages'])->name('admin.products.storeImages');
+            Route::post('storeImages/DB',[ProductController::class,'storeImagesDB'])->name('admin.products.storeImagesDB');
+            Route::post('deleteImage/{img}',[ProductController::class,'deleteImage'])->name('admin.products.deleteImage');
+        });
+        ##################################### end products #####################################
+        ##################################### attributes #########################################
+        Route::group(['prefix' => 'attributes'], function () {
+
+            Route::get('/',[AttributeController::class,'index'])->name('admin.attributes');
+            Route::get('create',[AttributeController::class,'create'])->name('admin.attributes.create');
+            Route::post('store',[AttributeController::class,'store'])->name('admin.attributes.store');
+            Route::get('edit/{id}',[AttributeController::class,'edit'])->name('admin.attributes.edit');
+            Route::post('update/{id}',[AttributeController::class,'update'])->name('admin.attributes.update');
+            Route::get('destroy/{id}',[AttributeController::class,'destroy'])->name('admin.attributes.destroy');
+        });
+        ##################################### end attributes #####################################
+        ##################################### options #########################################
+        Route::group(['prefix' => 'options'], function () {
+
+            Route::get('/',[OptionController::class,'index'])->name('admin.options');
+            Route::get('create',[OptionController::class,'create'])->name('admin.options.create');
+            Route::post('store',[OptionController::class,'store'])->name('admin.options.store');
+            Route::get('edit/{id}',[OptionController::class,'edit'])->name('admin.options.edit');
+            Route::post('update/{id}',[OptionController::class,'update'])->name('admin.options.update');
+            Route::get('destroy/{id}',[OptionController::class,'destroy'])->name('admin.options.destroy');
+        });
+        ##################################### end options #####################################
+
+
 
     });
 

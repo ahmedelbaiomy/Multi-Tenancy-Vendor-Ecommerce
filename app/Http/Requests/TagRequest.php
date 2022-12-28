@@ -25,7 +25,7 @@ class TagRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'slug'=>'required|unique:brands,slug,'.$this->id,
+            'slug'=>'required|unique:tags,slug,'.$this->id,
         ];
     }
 }

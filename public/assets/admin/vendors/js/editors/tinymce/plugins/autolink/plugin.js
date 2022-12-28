@@ -177,7 +177,7 @@ tinymce.PluginManager.add('autolink', function(editor) {
 			setEnd(endContainer, start);
 		}
 
-		// Exclude last . from word like "www.site.com."
+		// Exclude last . from word like "www.front.com."
 		text = rng.toString();
 		if (text.charAt(text.length - 1) == '.') {
 			setEnd(endContainer, start - 1);
