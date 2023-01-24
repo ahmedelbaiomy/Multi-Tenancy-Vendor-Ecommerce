@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\TagController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\AttributeController;
 use App\Http\Controllers\Dashboard\OptionController;
+use App\Http\Controllers\Dashboard\SliderController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -120,6 +121,16 @@ Route::group(
         });
         ##################################### end options #####################################
 
+        ################################## sliders ######################################
+        Route::group(['prefix' => 'sliders'], function () {
+
+            Route::get('/',[SliderController::class,'uploadImages'])->name('admin.sliders.create');
+            Route::post('storeImages',[SliderController::class,'storeImages'])->name('admin.sliders.storeImages');
+            Route::post('storeImages/DB',[SliderController::class,'storeImagesDB'])->name('admin.sliders.storeImagesDB');
+            Route::get('deleteImage/{img}',[SliderController::class,'deleteImage'])->name('admin.sliders.deleteImage');
+
+        });
+        ################################## end sliders    #######################################
 
 
     });

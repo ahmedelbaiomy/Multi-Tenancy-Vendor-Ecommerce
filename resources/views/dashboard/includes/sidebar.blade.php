@@ -144,15 +144,12 @@
 
                         </ul>
                     </li>
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">Horizontal</a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="../horizontal-menu-template"
-                                   data-i18n="nav.templates.horz.classic">Classic</a>
-                            </li>
-                            <li><a class="menu-item" href="../horizontal-menu-template-nav"
-                                   data-i18n="nav.templates.horz.top_icon">Full Width</a>
-                            </li>
-                        </ul>
+                    <li><a class="menu-item" href="{{route('admin.sliders.create')}}" data-i18n="nav.templates.horz.main">{{__('admin/sidebar.sliders')}}</a>
+{{--                        <ul class="menu-content">--}}
+{{--                            <li><a class="menu-item" href="{{route('admin.sliders.create')}}"--}}
+{{--                                   data-i18n="nav.templates.horz.classic">{{__('admin/sidebar.sliders')}}</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
                     </li>
                 </ul>
             </li>

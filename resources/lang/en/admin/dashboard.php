@@ -91,4 +91,6 @@ return [
     'options'=>'options',
     'option'=>'option',
     'add new option'=>'add new option',
+    'Add Sliders'=>'Add Sliders',
+    'sliders'=>'sliders',
 ];

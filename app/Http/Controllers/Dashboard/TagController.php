@@ -9,9 +9,11 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TagController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -19,6 +21,9 @@ class TagController extends Controller
      */
     public function index()
     {
+//        Alert::success('this is message index', 'success');
+        toast('Success Toast','success')->autoClose(5000);
+
         $tags = Tag::orderBy('id', 'DESC')->get();
         return view('dashboard.tags.index', compact('tags'));
     }

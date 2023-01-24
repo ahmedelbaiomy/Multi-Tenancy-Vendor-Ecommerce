@@ -23,6 +23,7 @@ return [
     'add new product' => 'Add new product',
     'attributes'=>'attributes',
     'add new attribute'=>'add new attribute',
+    'sliders'=>'Sliders',
     'options'=>'options',
     'add new option'=>'add new option',
 ];

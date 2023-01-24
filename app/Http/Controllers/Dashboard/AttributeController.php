@@ -8,9 +8,11 @@ use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AttributeController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *

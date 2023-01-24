@@ -89,6 +89,8 @@ return [
     'attribute'=>'خصائص المنتج',
     'add new attribute'=>'إضافة خاصيه جديده',
     'options'=>'السمات',
+    'Add Sliders'=>'اضافه صورالصفحه الرئيسيه',
+    'sliders'=>'صور الصفحه الرئيسيه',
     'option'=>'سمة',
     'add new option'=>'إضافه سمه جديده',
 ];

@@ -24,6 +24,7 @@ return [
     'add new product' => 'إضافه منتج جديد',
     'attributes'=>'خصائص المنتج',
     'add new attribute'=>'إضافة خاصيه جديده',
+    'sliders'=>'صور الصفحه الرئيسيه',
     'options'=>'السمات',
     'add new option'=>'إضافه سمه جديده',
 ];

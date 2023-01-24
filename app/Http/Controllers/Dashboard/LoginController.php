@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminLoginRequest;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
+
     public function login(){
         return view('dashboard.auth.login');
     }
@@ -16,7 +18,7 @@ class LoginController extends Controller
         $remember_me = $request->input('remember_me') ? true : false;
         if(auth()->guard('admin')->attempt(['email'=>$request->input('email'),'password'=>$request->input('password')],$remember_me)){
 //          notify()->success('تم الدحول بنجاح');
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.dashboard')->with('success','Logged In Successfully');
         }
 //        notify()->error('تم الدحول بنجاح');
         return redirect()->back()->with(['error'=>'هناك خطأ بالبيانات']);

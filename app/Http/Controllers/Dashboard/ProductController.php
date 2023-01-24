@@ -15,10 +15,12 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 use function PHPUnit\Framework\isEmpty;
 
 class ProductController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
