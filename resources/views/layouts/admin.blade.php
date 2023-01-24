@@ -64,6 +64,8 @@
             font-family: 'Cairo', sans-serif;
         }
     </style>
+
+
 </head>
 <body class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar"
       data-open="click" data-menu="vertical-menu" data-col="2-columns">
@@ -178,10 +180,14 @@
     $(window).on('load',function(){
         $('.open').removeClass("open");
     });
+
 </script>
 
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
 @yield('script')
+@include('sweetalert::alert')
+
 </body>
 </html>
 

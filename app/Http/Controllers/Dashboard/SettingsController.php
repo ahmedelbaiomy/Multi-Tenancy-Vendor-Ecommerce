@@ -7,9 +7,11 @@ use App\Http\Requests\ShippingsRequest;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SettingsController extends Controller
 {
+
     //
     public function editShippingMethods($type){
         if ($type === 'free')

@@ -82,7 +82,7 @@
                                                             <input type="text" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   value="{{$category -> name}}"
+                                                                   value="{{$category -> name ??''}}"
                                                                    name="name">
                                                             @error("name")
                                                             <span class="text-danger">{{$message}}</span>
@@ -118,7 +118,7 @@
                                                                             <option
                                                                                 {{$singleCategory->id == $category->parent_id ? 'selected' : ''}}
                                                                                 value="{{$singleCategory -> id }}">
-                                                                                {{$singleCategory->translations->where('locale',app()->getLocale())->first()->name ?? $singleCategory->translations->where('locale','en')->first()->name}}
+                                                                                {{$singleCategory->translations->where('locale',app()->getLocale())->first()->name ?? $singleCategory->translations->where('locale','en')->first()->name ?? ''}}
                                                                             </option>
                                                                         @endforeach
                                                                     @endif
